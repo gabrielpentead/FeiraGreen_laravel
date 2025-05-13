@@ -1,12 +1,14 @@
 @extends('layouts.main')
 
 @section('content')
+
 <section id="home" class="d-flex">
     @if (session('error'))
         <div class="error-message">{{ session('error') }}</div>
     @endif
 
-    @include('partials.carousel')
+    {{-- Carrossel de imagens --}}
+    @include('partials.carousel', ['imagens' => $imagens])
 </section>
 
 <div class="line"></div>
@@ -34,4 +36,5 @@
         <div class='produto-container-principal'><p>Nenhum produto encontrado.</p></div>
     @endif
 </div>
+
 @endsection
